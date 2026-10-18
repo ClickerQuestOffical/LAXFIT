@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAXFIT - Find Your Game. Find Your Position.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Landing Page -->
+        <section id="landing-page" class="page">
+            <div class="container">
+                <h1>LAXFIT</h1>
+                <p class="tagline">Find Your Game. Find Your Position.</p>
+                <p class="description">
+                    Your speed, size, skills, instincts, and play style all matter.
+                    Answer a few questions and discover where you could make the biggest impact on the field.
+                </p>
+                <button id="start-btn" class="primary-btn">Find My Position</button>
+                <div class="positions-overview">
+                    <h2>Positions</h2>
+                    <div class="position-categories">
+                        <div class="category">
+                            <h3>Attack</h3>
+                            <p>X Attackman, Wing Attackman, Crease Attackman</p>
+                        </div>
+                        <div class="category">
+                            <h3>Midfield</h3>
+                            <p>Offensive, Two-Way, SSDM, LSM, Faceoff Specialist</p>
+                        </div>
+                        <div class="category">
+                            <h3>Defense</h3>
+                            <p>Close Defenseman</p>
+                        </div>
+                        <div class="category">
+                            <h3>Goalie</h3>
+                            <p>Goalie</p>
+                        </div>
+                    </div>
+                    <p class="beginner-note">No experience? No problem. Beginners are welcome!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mode Selection -->
+        <section id="mode-selection" class="page">
+            <div class="container">
+                <h2>Who is taking the quiz?</h2>
+                <div class="mode-options">
+                    <button id="player-mode-btn" class="mode-btn">
+                        <h3>Player Mode</h3>
+                        <p>For people discovering their own ideal position</p>
+                    </button>
+                    <button id="coach-mode-btn" class="mode-btn">
+                        <h3>Coach Mode</h3>
+                        <p>For coaches, parents, or others assessing a player</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz-page" class="page">
+            <div class="container">
+                <div class="quiz-header">
+                    <h2 id="question-counter">Question 1</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+                <div id="question-container">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="nav-btn">Back</button>
+                    <button id="next-btn" class="nav-btn">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results-page" class="page">
+            <div class="container">
+                <h2>Your Position Recommendation</h2>
+                <div id="results-content">
+                    <!-- Results will be dynamically inserted here -->
+                </div>
+                <div class="results-actions">
+                    <button id="retake-btn" class="action-btn">Retake Quiz</button>
+                    <button id="review-btn" class="action-btn">Review Answers</button>
+                    <button id="print-btn" class="action-btn">Print Results</button>
+                    <button id="new-assessment-btn" class="action-btn">New Assessment</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
