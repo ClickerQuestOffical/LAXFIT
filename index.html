@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAXFIT - Find Your Game. Find Your Position.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Landing Page -->
+        <section id="landing-page" class="page">
+            <div class="container">
+                <h1>LAXFIT</h1>
+                <p class="tagline">Find Your Game. Find Your Position.</p>
+                <p class="description">
+                    Your speed, size, skills, instincts, and play style all matter.
+                    Answer a few questions and discover where you could make the biggest impact on the field.
+                </p>
+                <button id="start-btn" class="primary-btn">Find My Position</button>
+                <button id="stick-lab-btn" class="secondary-btn">Visit Stick Lab</button>
+                <div class="positions-overview">
+                    <h2>Positions</h2>
+                    <div class="position-categories">
+                        <div class="category">
+                            <h3>Attack</h3>
+                            <p>X Attackman, Wing Attackman, Crease Attackman</p>
+                        </div>
+                        <div class="category">
+                            <h3>Midfield</h3>
+                            <p>Offensive, Two-Way, SSDM, LSM, Faceoff Specialist</p>
+                        </div>
+                        <div class="category">
+                            <h3>Defense</h3>
+                            <p>Close Defenseman</p>
+                        </div>
+                        <div class="category">
+                            <h3>Goalie</h3>
+                            <p>Goalie</p>
+                        </div>
+                    </div>
+                    <p class="beginner-note">No experience? No problem. Beginners are welcome!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stick Lab Navigation -->
+        <section id="stick-lab-nav" class="page">
+            <div class="container">
+                <h1>LAXFIT Stick Lab</h1>
+                <p class="tagline">Build Your Perfect Stick</p>
+                <p class="description">
+                    Your position. Your play style. Your budget. Discover the lacrosse setup built around you.
+                </p>
+
+                <!-- Step Indicators -->
+                <div id="stick-lab-progress" class="progress-indicators">
+                    <div class="progress-step active" data-step="0">Welcome</div>
+                    <div class="progress-step" data-step="1">Position</div>
+                    <div class="progress-step" data-step="2">Budget</div>
+                    <div class="progress-step" data-step="3">Equipment Questions</div>
+                    <div class="progress-step" data-step="4">Tape Questions</div>
+                    <div class="progress-step" data-step="5">Results</div>
+                </div>
+
+                <!-- Step Content -->
+                <div id="stick-lab-step-content">
+                    <!-- Step 0: Welcome -->
+                    <div id="stick-lab-step-0" class="stick-lab-step active">
+                        <div class="stick-lab-actions">
+                            <button id="customize-stick-btn" class="primary-btn">Customize My Stick</button>
+                            <button id="import-position-btn" class="secondary-btn">Import My Position Results</button>
+                            <button id="recommend-setup-btn" class="secondary-btn">Recommend My Entire Setup</button>
+                        </div>
+                        <div class="stick-lab-overview">
+                            <h2>Your Stick Components</h2>
+                            <div class="component-overview">
+                                <div class="component-item">
+                                    <h3>Shaft</h3>
+                                    <p>The foundation of your stick - affects weight, durability, and feel</p>
+                                </div>
+                                <div class="component-item">
+                                    <h3>Head</h3>
+                                    <p>Controls catching, throwing, and ball control</p>
+                                </div>
+                                <div class="component-item">
+                                    <h3>Mesh & Pocket</h3>
+                                    <p>Determines hold, release, and consistency</p>
+                                </div>
+                                <div class="component-item">
+                                    <h3>Tape & Grip</h3>
+                                    <p>Enhances control and comfort where you hold the stick</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 1: Position Selection -->
+                    <div id="stick-lab-step-1" class="stick-lab-step">
+                        <h2>Select Your Position</h2>
+                        <p>Choose your primary lacrosse position or import your results from the position finder quiz.</p>
+                        <div id="position-options" class="position-options">
+                            <!-- Position buttons will be populated dynamically -->
+                        </div>
+                        <div class="navigation-buttons">
+                            <button id="pos-prev-btn" class="nav-btn" disabled>Back</button>
+                            <button id="pos-next-btn" class="nav-btn primary-btn">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Budget Selection -->
+                    <div id="stick-lab-step-2" class="stick-lab-step">
+                        <h2>Select Your Budget</h2>
+                        <p>Choose your budget range for the complete stick build (shaft, head, mesh, tape).</p>
+                        <div id="budget-options" class="budget-options">
+                            <!-- Budget options will be populated dynamically -->
+                        </div>
+                        <div class="navigation-buttons">
+                            <button id="budget-prev-btn" class="nav-btn">Back</button>
+                            <button id="budget-next-btn" class="nav-btn primary-btn">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Adaptive Equipment Quiz -->
+                    <div id="stick-lab-step-3" class="stick-lab-step">
+                        <div class="quiz-header">
+                            <h2 id="stick-question-counter">Question 1</h2>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="stick-progress-fill"></div>
+                            </div>
+                        </div>
+                        <div id="stick-question-container">
+                            <!-- Questions will be dynamically inserted here -->
+                        </div>
+                        <div class="quiz-navigation">
+                            <button id="stick-prev-btn" class="nav-btn">Back</button>
+                            <button id="stick-next-btn" class="nav-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Adaptive Tape Quiz -->
+                    <div id="stick-lab-step-4" class="stick-lab-step">
+                        <div class="quiz-header">
+                            <h2 id="tape-question-counter">Question 1</h2>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="tape-progress-fill"></div>
+                            </div>
+                        </div>
+                        <div id="tape-question-container">
+                            <!-- Tape questions will be dynamically inserted here -->
+                        </div>
+                        <div class="quiz-navigation">
+                            <button id="tape-prev-btn" class="nav-btn">Back</button>
+                            <button id="tape-next-btn" class="nav-btn">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Results -->
+                    <div id="stick-lab-step-5" class="stick-lab-step">
+                        <div id="stick-results-content">
+                            <!-- Results will be dynamically inserted here -->
+                        </div>
+                        <div class="stick-results-actions">
+                            <button id="stick-retake-btn" class="action-btn">Retake Stick Quiz</button>
+                            <button id="stick-edit-btn" class="action-btn">Edit Selections</button>
+                            <button id="stick-new-assessment-btn" class="action-btn">New Assessment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mode Selection -->
+        <section id="mode-selection" class="page">
+            <div class="container">
+                <h2>Who is taking the quiz?</h2>
+                <div class="mode-options">
+                    <button id="player-mode-btn" class="mode-btn">
+                        <h3>Player Mode</h3>
+                        <p>For people discovering their own ideal position</p>
+                    </button>
+                    <button id="coach-mode-btn" class="mode-btn">
+                        <h3>Coach Mode</h3>
+                        <p>For coaches, parents, or others assessing a player</p>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz-page" class="page">
+            <div class="container">
+                <div class="quiz-header">
+                    <h2 id="question-counter">Question 1</h2>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+                <div id="question-container">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+                <div class="quiz-navigation">
+                    <button id="prev-btn" class="nav-btn">Back</button>
+                    <button id="next-btn" class="nav-btn">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section id="results-page" class="page">
+            <div class="container">
+                <h2>Your Position Recommendation</h2>
+                <div id="results-content">
+                    <!-- Results will be dynamically inserted here -->
+                </div>
+                <div class="results-actions">
+                    <button id="retake-btn" class="action-btn">Retake Quiz</button>
+                    <button id="review-btn" class="action-btn">Review Answers</button>
+                    <button id="print-btn" class="action-btn">Print Results</button>
+                    <button id="new-assessment-btn" class="action-btn">New Assessment</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+    <script src="sticklab.js"></script>
+</body>
+</html>
