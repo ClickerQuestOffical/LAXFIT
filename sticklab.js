@@ -681,7 +681,7 @@ class StickLab {
 
     // Results methods
     showResults() {
-        this.showStep(4);
+        this.showStep(5);
         this.calculateAndDisplayResults();
     }
 
