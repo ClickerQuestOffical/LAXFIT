@@ -428,7 +428,7 @@ class StickLab {
         );
 
         if (availableQuestionIds.length === 0) {
-            this.showResults();
+            this.showStep(4); // Go to tape quiz
             return;
         }
 
@@ -437,7 +437,7 @@ class StickLab {
         const question = this.questionBank.find(q => q.id === nextQuestionId);
 
         if (!question) {
-            this.showResults();
+            this.showStep(4); // Go to tape quiz
             return;
         }
 
